@@ -44,14 +44,16 @@
   display: flex;
   align-items: center;
   padding: 0.5rem 0 0 0.5rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  transition: background 0.2s;
   border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, background 0.2s ease;
+}
+.skillsList li:hover {
+  background: rgba(106, 106, 106, 0.2);
+  backdrop-filter: blur(2px);
+  transform: scale(1.1);
 }
 
-.skillsList li:last-child {
-  border-bottom: none;
-}
 
 .icon {
   font-size: 1.45em;
@@ -60,10 +62,6 @@
   filter: drop-shadow(0 2px 6px #64ffda33);
 }
 
-.skillsList li:hover {
-  background: rgba(106, 106, 106, 0.2);
-  backdrop-filter: blur(2px);
-}
 
 @media (max-width: 768px) {
   .skills{padding: 6rem 1rem 1rem 1rem;}

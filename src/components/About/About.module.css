@@ -5,6 +5,32 @@
   height: auto;
 }
 
+.highlights {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.highlight:hover {
+  transform: translateX(10px);
+  background: rgba(106, 106, 106, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
 
 .inner{
   display: grid;
@@ -85,6 +111,7 @@
   .pic {
     margin: 0.5rem auto 0.5rem;
     width: 60%;
+    min-width: 200px;
     padding: 1rem;
   }
 }
