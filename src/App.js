@@ -8,14 +8,14 @@ import Skills from "./components/Skills/Skills";
 
 function App() {
     const imgPaths = [
-        {name: "c++", src: "/cplus-icon.png"},
-        {name: "c#", src: "/csharp-icon.png"},
-        {name: "qt", src: "/qt-icon.png"},
-        {name: "css", src: "/css-icon.png"},
-        {name: "html", src: "/html-icon.png"},
-        {name: "js", src: "/js-icon.png"},
-        {name: "react", src: "/react-icon.png"},
-        {name: "node", src: "/node-icon.png"},
+        {name: "c++", src: `${process.env.PUBLIC_URL}/cplus-icon.png`},
+        {name: "c#", src: `${process.env.PUBLIC_URL}/csharp-icon.png`},
+        {name: "qt", src: `${process.env.PUBLIC_URL}/qt-icon.png`},
+        {name: "css", src: `${process.env.PUBLIC_URL}/css-icon.png`},
+        {name: "html", src: `${process.env.PUBLIC_URL}/html-icon.png`},
+        {name: "js", src: `${process.env.PUBLIC_URL}/js-icon.png`},
+        {name: "react", src: `${process.env.PUBLIC_URL}/react-icon.png`},
+        {name: "node", src: `${process.env.PUBLIC_URL}/node-icon.png`},
     ]
     return (
         <div className={styles.app}>

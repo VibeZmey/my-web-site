@@ -9,7 +9,7 @@ function About() {
       <div className={styles.inner}>
         <div className={styles.pic}>
           <div className={styles.wrapper}>
-            <img className={styles.img} src="/me.jpg" alt="" />
+            <img className={styles.img} src={`${process.env.PUBLIC_URL}/me.jpg`} alt="" />
           </div>
         </div>
         <div>
