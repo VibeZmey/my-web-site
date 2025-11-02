@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/VibeZmey/my-web-site/static/css/main.4aed17bf.css",
+    "main.js": "/VibeZmey/my-web-site/static/js/main.75e5d8a3.js",
+    "index.html": "/VibeZmey/my-web-site/index.html",
+    "main.4aed17bf.css.map": "/VibeZmey/my-web-site/static/css/main.4aed17bf.css.map",
+    "main.75e5d8a3.js.map": "/VibeZmey/my-web-site/static/js/main.75e5d8a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4aed17bf.css",
+    "static/js/main.75e5d8a3.js"
+  ]
+}
