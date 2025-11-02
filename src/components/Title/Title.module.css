@@ -1,0 +1,28 @@
+.text::before{
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-color);
+  box-sizing: inherit;
+  margin-right: 20px;
+}
+
+.text{
+  display: flex;
+  align-items: center;
+  padding-bottom: 25px;
+  white-space: nowrap;
+}
+
+.text::after{
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-color);
+  box-sizing: inherit;
+  margin-left: 20px;
+}

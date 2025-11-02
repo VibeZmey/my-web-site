@@ -1,0 +1,90 @@
+.about {
+  color: var(--text-color);
+  padding: 5rem 4rem 1rem 4rem;
+  width: 100%;
+  height: auto;
+}
+
+
+.inner{
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.pic {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+.wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.wrapper:hover,
+.wrapper:focus {
+  outline: 0;
+  transform: translate(-4px, -4px);
+}
+
+.wrapper:hover::after,
+.wrapper:focus::after {
+  transform: translate(8px, 8px);
+}
+
+
+.img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  mix-blend-mode: multiply;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Зеленая рамка сзади */
+.wrapper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid var(--text-color);
+  top: 14px;
+  left: 14px;
+  z-index: -1;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@media (max-width: 768px) {
+  .about {padding: 6rem 1rem 1rem 1rem;}
+  .wrapper:hover,
+  .wrapper:focus {}
+
+  .wrapper:hover::after,
+  .wrapper:focus::after {}
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  .pic {
+    margin: 0.5rem auto 0.5rem;
+    width: 60%;
+    padding: 1rem;
+  }
+}
