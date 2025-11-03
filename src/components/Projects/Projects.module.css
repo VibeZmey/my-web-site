@@ -1,0 +1,23 @@
+.projects {
+  color: var(--text-color);
+  padding: 5rem 4rem 1rem 4rem;
+  width: 100%;
+  height: auto;
+}
+
+.inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .inner{grid-template-columns: 1fr 1fr;}
+}
+
+@media (max-width: 768px) {
+  .projects{padding: 6rem 1rem 1rem 1rem;}
+  .inner{grid-template-columns: 1fr;}
+}
