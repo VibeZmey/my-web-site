@@ -5,6 +5,7 @@ import About from "./components/About/About";
 import styles from './App.module.css';
 import Marquee from "react-fast-marquee";
 import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
 
 function App() {
     const imgPaths = [
@@ -38,6 +39,7 @@ function App() {
                     ))}
                 </Marquee>
             </div>
+            <Projects />
             <Background />
         </div>
     );

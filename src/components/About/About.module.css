@@ -93,6 +93,23 @@
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+@media (max-width: 992px) {
+  .pic {
+    margin: 0.5rem auto 0.5rem;
+    width: 60%;
+    min-width: 200px;
+    padding: 1rem;
+  }
+
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about {padding: 6rem 1rem 1rem 1rem;}
   .wrapper:hover,
@@ -101,17 +118,6 @@
   .wrapper:hover::after,
   .wrapper:focus::after {}
 
-  .inner {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    gap: 1rem;
-  }
 
-  .pic {
-    margin: 0.5rem auto 0.5rem;
-    width: 60%;
-    min-width: 200px;
-    padding: 1rem;
-  }
+
 }

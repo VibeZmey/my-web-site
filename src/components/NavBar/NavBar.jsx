@@ -11,7 +11,7 @@ function NavBar(){
         <a href="#skills">
           <span className={styles.link}>My Skills</span>
         </a>
-        <a href="/">
+        <a href="#projects">
           <span className={styles.link}>Projects</span>
         </a>
         <a href="/">
