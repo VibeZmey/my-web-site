@@ -19,6 +19,7 @@ html{
 .dark-theme{
   --bg-color: #000;
   --text-color: #fff;
+  --muted-text-color: #717171;
   --canvas: #fff;
   --bg-nav: rgba(37, 37, 37, 0.3);
 }

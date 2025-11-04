@@ -43,7 +43,7 @@
 .skillsList li:hover {
   background: rgba(106, 106, 106, 0.2);
   backdrop-filter: blur(2px);
-  transform: scale(1.1);
+  transform: translateY(-10px);
 }
 
 
@@ -58,16 +58,19 @@
 @media (max-width: 768px) {
   .skills{padding: 6rem 1rem 1rem 1rem;}
 
-  .skillsList {width: 80%}
+  .skillsList li:hover{transform: translateY(-5px);}
 
   .skillsList {
+    width: 80%;
     padding: 18px 10px 18px 10px;
     font-size: 1em;
   }
+
   .icon {
     font-size: 1.15em;
     margin-right: 12px;
   }
+
   .inner {
     display: flex;
     flex-direction: column;

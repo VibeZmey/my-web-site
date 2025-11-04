@@ -8,6 +8,7 @@ function Skills(){
   return (
     <section id="skills" className={styles.skills}>
       <Title>My skills</Title>
+
       <div className={styles.inner}>
         <div className={styles.skillWrapper}>
           <h2>Soft</h2>
@@ -15,6 +16,7 @@ function Skills(){
             {soft.map((skill) => (<li>{skill}</li>))}
           </ul>
         </div>
+
         <div className={styles.skillWrapper}>
           <h2>Hard</h2>
           <ul className={styles.skillsList}>

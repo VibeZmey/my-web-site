@@ -4,6 +4,7 @@ function NavBar(){
   return (
     <nav className={styles.navbar}>
       <span className={styles.logo}><a href="/">ZM</a></span>
+
       <div className={styles.nav}>
         <a href="#about">
           <span className={styles.link}>About me</span>
