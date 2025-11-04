@@ -3,6 +3,7 @@
   flex-direction: row;
   gap: 1rem;
   align-items: center;
+  transition: color 0.3s ease;
 }
 
 .foot{
@@ -12,15 +13,21 @@
   align-items: center;
   gap: 1rem;
   padding-top: 1rem;
+  color: var(--muted-text-color)
 }
 
 .headIcon{
   height: 3rem;
   width: auto;
 }
+
 .footIcon{
   height: 2rem;
   width: auto;
+  transition: transform 0.3s ease;
+}
+.footIcon:active{
+  transform: scale(1.1);
 }
 
 .imageWrapper{
@@ -44,6 +51,12 @@
 .card:hover{
   background: rgba(106, 106, 106, 0.2);
   backdrop-filter: blur(2px);
+  transform: scale(1.05);
+
+  .head{color: #64ffda;}
+}
+
+.card:active{
   transform: scale(1.1);
 }
 

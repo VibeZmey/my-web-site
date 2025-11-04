@@ -1,9 +1,9 @@
 import styles from './ProjectCard.module.css'
 
 
-function ProjectCard({project}){
+function ProjectCard({project, onClick}) {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={()=>onClick(project)}>
       <div className={styles.head}>
         <img className={styles.headIcon} src={`${process.env.PUBLIC_URL}/project-icon.png`} alt="project icon" />
 
