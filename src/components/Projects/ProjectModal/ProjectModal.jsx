@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './ProjectModal.module.css';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination, Navigation} from "swiper/modules";
@@ -7,6 +7,19 @@ import 'swiper/css/navigation'; // стили для кнопок
 import 'swiper/css/pagination'; // стили для точек
 
 function ProjectModal({ project, onClick }) {
+
+  const [countOfImages, setCountOfImages] = useState(2);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 992)setCountOfImages(1);
+      else setCountOfImages(2);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+
 
   return (
     <modal className={styles.modal}>
@@ -18,15 +31,15 @@ function ProjectModal({ project, onClick }) {
       </div>
 
       <Swiper
-        modules={[Navigation, Pagination]} // ← подключаем модули
-        spaceBetween={20}                  // отступ между слайдами (опционально)
-        slidesPerView={1}                  // показывать 1 слайд (по умолчанию и так 1)
-        navigation={true}                  // ← включить кнопки "вперёд/назад"
-        pagination={{                      // ← настройки пагинации
-          clickable: true,                 // точки кликабельные
-          dynamicBullets: true             // адаптивные точки (опционально)
+        modules={[Navigation, Pagination]}
+        spaceBetween={20}
+        slidesPerView={countOfImages}
+        navigation={true}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true
         }}
-        loop={false}                       // если не нужна зацикленность
+        loop={false}
       >
         {project.images.map((img, i) => (
           <SwiperSlide key={i}>
@@ -36,13 +49,13 @@ function ProjectModal({ project, onClick }) {
       </Swiper>
 
       <main>
-        <p>{project.fullDescription.description}</p>
+        <p className={styles.description}>{project.fullDescription.description}</p>
         <p>Технологии</p>
         <ul>
           {project.fullDescription.technologies.map((techno, i) => (<li key={i}>{techno}</li>))}
         </ul>
 
-        <p>Фичи</p>
+        <p>Ключевые фичи</p>
         <ul>
           {project.fullDescription.keyFeatures.map((feature, i) => (<li key={i}>{feature}</li>))}
         </ul>

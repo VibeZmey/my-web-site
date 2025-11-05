@@ -23,23 +23,35 @@
   align-items: center;
   gap: 1rem;
 }
-@media (max-width: 767.98px) {
-  .nav { gap: 0.5rem; }
-  .navbar { padding: 0 1rem}
+
+.menuIcon{
+  fill: var(--text-color);
+  width: 60px;
+  height: 60px;
+  transition: transform 0.2s ease;
+}
+
+.menuIcon:hover{
+  transform: scale(1.05);
+}
+
+.menuIcon:active{
+  transform: scale(1.1);
+}
+
+.iconsWrapper{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  align-items: center;
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: var(--bg-color);
-  background: var(--text-color);
-  border-radius: 8px;
-  margin-right: 10px;
-  font-size: 1rem;
+  fill: var(--text-color);
+  width: 80px;
+  height: 80px;
+  transition: transform 0.2s ease;
 }
 
 .logo:hover {
@@ -48,6 +60,7 @@
 
 .link {
   position: relative;
+  flex-wrap: nowrap;
 }
 
 .link::after {
@@ -64,5 +77,63 @@
 .link:hover::after {
   width: 100%;
 }
+.link:focus {
+  outline: 2px dotted #64ffda; /* пунктирная обводка */
+  outline-offset: 2px;         /* отступ от элемента (опционально) */
+}
 
-@media (max-width: 500px) {}
+.navHelper{
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fadeOut {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeOut 0.6s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 0.6s ease forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .navbar {
+    flex-direction: column;
+    padding: 0 1rem;
+    height: auto;
+  }
+  .logo{
+    width: 70px;
+    height: 70px;
+    margin-right: auto;
+  }
+  .menuIcon{
+    margin-left: auto;
+
+  }
+  .link{margin-left: auto}
+
+}
