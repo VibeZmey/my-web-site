@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation'; // стили для кнопок
 import 'swiper/css/pagination'; // стили для точек
 
-function ProjectModal({ project, onClick }) {
+function ProjectModal({ project, onClick, isClosing }) {
 
   const [countOfImages, setCountOfImages] = useState(2);
   useEffect(() => {
@@ -19,13 +19,11 @@ function ProjectModal({ project, onClick }) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-
-
   return (
-    <modal className={styles.modal}>
+    <modal className={`${styles.modal} ${isClosing ? styles.fadeOut : styles.fadeIn}`}>
       <div className={styles.head}>
         <h2>{project.name}</h2>
-        <button className={styles.closeButton} onClick={onClick} aria-label="Закрыть">
+        <button className={styles.closeButton} onClick={()=>onClick()} aria-label="Закрыть">
           ×
         </button>
       </div>
@@ -60,6 +58,17 @@ function ProjectModal({ project, onClick }) {
           {project.fullDescription.keyFeatures.map((feature, i) => (<li key={i}>{feature}</li>))}
         </ul>
       </main>
+      <div className={styles.foot}>
+        <a href={project.ghLink} target="_blank" rel="noopener noreferrer">
+          <img className={styles.footIcon} src={`${process.env.PUBLIC_URL}/github-mark-white.png`} alt="github link" />
+        </a>
+        {project.liveLink && (
+          <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+            <img className={styles.footIcon} src={`${process.env.PUBLIC_URL}/external-link-icon.png`} alt="external link" />
+          </a>
+        )}
+        <button className={styles.backButton} onClick={()=>onClick()}>Назад</button>
+      </div>
     </modal>
   );
 }

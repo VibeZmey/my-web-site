@@ -1,7 +1,7 @@
 import styles from './Projects.module.css'
 import Title from "../Title/Title";
 import ProjectCard from "./ProjectCard/ProjectCard";
-import {useState, useEffect, useCallback} from "react";
+import {useState} from "react";
 import ProjectModal from "./ProjectModal/ProjectModal";
 function Projects(){
 
@@ -98,27 +98,25 @@ function Projects(){
     },
   ]
   const [isModalOpen, setModalOpen] = useState(false);
-  const [targetProject, setTargetProject] = useState(
-    {
-                name: 'Checkers',
-                smallDescription: 'Классические русские шашки с поддержкой двух игроков на одном устройстве.',
-                fullDescription: 'Developer project',
-                ghLink: 'https://github.com/VibeZmey/Checkers',
-                images: [
-                  `${process.env.PUBLIC_URL}/checkers-1.png`,
-                  `${process.env.PUBLIC_URL}/checkers-2.png`,
-                  `${process.env.PUBLIC_URL}/checkers-3.png`
-                ],
-                langs: 'C++ Qt',
-              },
-    );
+  const [targetProject, setTargetProject] = useState(null);
+
+
   const handleModalOpen = (project) => {
-    setModalOpen(prev => !prev);
+    setModalOpen(true);
     setTargetProject(project);
   }
 
+  const [isClosing, setIsClosing] = useState(false);
+
   const handleModalClose = () => {
-    setModalOpen(prev => !prev);
+    setIsClosing(true);
+    // Ждём окончания анимации (0.4s), затем вызываем onClose
+    console.log(isClosing);
+    setTimeout(() => {
+      setIsClosing(false);
+      console.log(isClosing);
+      setModalOpen(false);
+    }, 600); // ← должно совпадать с длительностью анимации
   }
 
   return (
@@ -127,11 +125,11 @@ function Projects(){
       <Title>Projects</Title>
       {!isModalOpen && (
         <div className={styles.inner}>
-          {projects.map(project => (<ProjectCard project={project} onClick={handleModalOpen} />))}
+          {projects.map(project => (<ProjectCard project={project} modalOpen={handleModalOpen} />))}
         </div>
       )}
 
-      {isModalOpen && (<ProjectModal project={targetProject} onClick={handleModalClose} />)}
+      {isModalOpen && (<ProjectModal isClosing={isClosing} project={targetProject} onClick={handleModalClose} />)}
     </section>
   )
 }

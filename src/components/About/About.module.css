@@ -101,6 +101,9 @@
     padding: 1rem;
   }
 
+  .about{
+    padding: 5rem 2rem 1rem 2rem;
+  }
 
   .inner {
     display: flex;

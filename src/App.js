@@ -6,6 +6,8 @@ import styles from './App.module.css';
 import Marquee from "react-fast-marquee";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
+import Footer from "./components/Footer/Footer";
+import Contacts from "./components/Contacts/Contacts";
 
 function App() {
     const imgPaths = [
@@ -40,6 +42,8 @@ function App() {
                 </Marquee>
             </div>
             <Projects />
+            <Contacts/>
+            <Footer />
             <Background />
         </div>
     );

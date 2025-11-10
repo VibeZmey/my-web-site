@@ -13,14 +13,14 @@ function Skills(){
         <div className={styles.skillWrapper}>
           <h2>Soft</h2>
           <ul className={styles.skillsList}>
-            {soft.map((skill) => (<li>{skill}</li>))}
+            {soft.map((skill, i) => (<li key={i}>{skill}</li>))}
           </ul>
         </div>
 
         <div className={styles.skillWrapper}>
           <h2>Hard</h2>
           <ul className={styles.skillsList}>
-            {hard.map((skill) => (<li>{skill}</li>))}
+            {hard.map((skill, i) => (<li key={i}>{skill}</li>))}
           </ul>
         </div>
       </div>
