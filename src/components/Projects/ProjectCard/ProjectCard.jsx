@@ -1,4 +1,6 @@
 import styles from './ProjectCard.module.css'
+import { ReactComponent as GitHub } from '../../../assets/github-icon.svg';
+import { ReactComponent as ExternalLink } from '../../../assets/external-link-icon2.svg';
 
 function ProjectCard({project, modalOpen}) {
   return (
@@ -17,11 +19,11 @@ function ProjectCard({project, modalOpen}) {
 
           <div className={styles.imageWrapper}>
             <a href={project.ghLink} target="_blank" rel="noopener noreferrer">
-              <img className={styles.footIcon} src={`${process.env.PUBLIC_URL}/github-mark-white.png`} alt="github link" />
+              <GitHub className={`${styles.footIcon}`} alt="gitHub link" />
             </a>
             {project.liveLink && (
               <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                <img className={styles.footIcon} src={`${process.env.PUBLIC_URL}/external-link-icon.png`} alt="external link" />
+                <ExternalLink className={styles.footIcon} alt="external link" />
               </a>
             )}
           </div>

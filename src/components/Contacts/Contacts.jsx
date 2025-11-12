@@ -2,12 +2,12 @@ import styles from './Contacts.module.css'
 import Title from "../Title/Title";
 import Map from "./Map/Map";
 import Form from "./Form/Form";
+import { ReactComponent as GitHub } from '../../assets/github-icon.svg';
+import { ReactComponent as Telegram } from '../../assets/telegram-icon.svg';
+import { ReactComponent as Vk } from '../../assets/vk-icon.svg';
 
-const icons = [
-  {src: `${process.env.PUBLIC_URL}/github-mark-black.png`, alt: 'Github Logo'},
-  {src: `${process.env.PUBLIC_URL}/vk-icon.png`, alt: 'Vk Icon'},
-  {src: `${process.env.PUBLIC_URL}/telegram-icon.png`, alt: 'Telegram Icon'},
-]
+
+
 
 function Contacts(){
   return (
@@ -15,9 +15,15 @@ function Contacts(){
       <Title>Contacts</Title>
 
       <div className={styles.socialMedia}>
-        {icons && icons.map((icon, i) => (
-          <img className={styles.contactIcon} src={icon.src} alt={icon.alt} key={i}/>
-        ))}
+        <a href={'https://github.com/VibeZmey/'} target="_blank" rel="noopener noreferrer">
+          <GitHub className={`${styles.contactIcon} ${styles.inverted}`}/>
+        </a>
+        <a href={'https://github.com/VibeZmey/'} target="_blank" rel="noopener noreferrer">
+          <Telegram className={styles.contactIcon}/>
+        </a>
+        <a href={'https://github.com/VibeZmey/'} target="_blank" rel="noopener noreferrer">
+          <Vk className={styles.contactIcon}/>
+        </a>
       </div>
       <span className={styles.or}>or</span>
       <main className={styles.form}>

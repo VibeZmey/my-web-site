@@ -62,6 +62,11 @@
   position: relative;
   flex-wrap: nowrap;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: var(--accent-color);
 }
 
 .link::after {
@@ -71,7 +76,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--text-color);
+  background: var(--accent-color);
   transition: width 0.3s ease;
 }
 
@@ -82,9 +87,12 @@
 .link.active::after {
   width: 100%;
 }
+.link.active{
+  color: var(--accent-color);
+}
 
 .link:focus {
-  outline: 2px dotted #64ffda;
+  outline: 2px dotted var(--accent-color);
   outline-offset: 2px;
 }
 
@@ -225,7 +233,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: var(--text-color);
+    background: var(--accent-color);
     transition: width 0.3s ease;
   }
 
@@ -234,3 +242,4 @@
     width: 100%;
   }
 }
+

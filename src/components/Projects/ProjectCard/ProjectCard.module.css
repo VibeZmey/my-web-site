@@ -22,9 +22,15 @@
 }
 
 .footIcon{
+  display: inline-block;
   height: 2rem;
   width: auto;
   transition: transform 0.3s ease;
+  fill: var(--text-color);
+}
+
+svg{
+  fill: var(--text-color);
 }
 .footIcon:active{
   transform: scale(1.1);
@@ -42,7 +48,7 @@
   height: 100%;
   border-radius: 8px;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--highlight-bg);
   transition: transform 0.3s ease, background 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -55,7 +61,7 @@
   backdrop-filter: blur(2px);
   transform: scale(1.05);
 
-  .head{color: #64ffda;}
+  .head{color: var(--accent-color);}
 }
 .cardWrapper{
   width: 100%;

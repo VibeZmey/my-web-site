@@ -8,6 +8,7 @@ import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
 import Contacts from "./components/Contacts/Contacts";
+import {useState, useEffect} from "react";
 
 function App() {
     const imgPaths = [
@@ -20,9 +21,27 @@ function App() {
         {name: "react", src: `${process.env.PUBLIC_URL}/react-icon.png`},
         {name: "node", src: `${process.env.PUBLIC_URL}/node-icon.png`},
     ]
+    const [isMobile, setIsMobile] = useState(false);
+    const [theme, setTheme] = useState("dark-theme");
+
+    useEffect(() => {
+        document.documentElement.classList.remove(...document.documentElement.classList);
+        document.documentElement.classList.add(theme);
+    }, [theme]);
+
+    useEffect(() => {
+        const hanldeResize = () =>{
+            if(window.innerWidth < 768) setIsMobile(true);
+            else setIsMobile(false);
+        }
+        hanldeResize();
+        window.addEventListener("resize", hanldeResize);
+        return () => window.removeEventListener("resize", hanldeResize);
+    }, [])
+
     return (
         <div className={styles.app}>
-            <NavBar />
+            <NavBar isMobile={isMobile} setTheme={setTheme} />
             <About />
             <Skills />
             <div className={styles.container}>
@@ -44,7 +63,7 @@ function App() {
             <Projects />
             <Contacts/>
             <Footer />
-            <Background />
+            <Background theme={theme}/>
         </div>
     );
 }

@@ -17,7 +17,7 @@
 
 /* Стиль лейбла */
 .label {
-  color: #fff;
+  color: var(--text-color);
   font-size: 1rem;
   transition: color 0.3s ease;
   margin-bottom: 0.2rem;
@@ -28,15 +28,14 @@
   font-size: 1rem;
   border-radius: 6px;
   padding: 12px 14px;
-  border: 2px solid #333;
-  background-color: #1a1a1a;
-  color: #fff;
+  border: 2px solid var(--input-border);
+  background-color: var(--highlight-bg);
+  color: var(--text-color);
   transition: all 0.3s ease;
 }
 
 .input:focus {
-  border-color: #fff;
-  background-color: #222;
+  border-color: var(--input-focus-border);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
@@ -49,7 +48,7 @@
 }
 
 .input.error {
-  border-color: #ff6b6b;
+  border-color: var(--error-color);
   background-color: rgba(255, 107, 107, 0.05);
 }
 
@@ -66,16 +65,16 @@
   resize: none;
   border-radius: 6px;
   padding: 12px 14px;
-  border: 2px solid #333;
-  background-color: #1a1a1a;
-  color: #fff;
+  border: 2px solid var(--input-border);
+  background-color: var(--highlight-bg);
+  color: var(--text-color);
   transition: all 0.3s ease;
 }
 
 .textarea:focus {
-  border-color: #fff;
-  background-color: #222;
+  border-color: var(--input-focus-border);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  cursor: url('/public/cursor-enot.png'), auto;
 }
 
 .textarea:hover:not(.error) {
@@ -87,7 +86,7 @@
 }
 
 .textarea.error {
-  border-color: #ff6b6b;
+  border-color: var(--error-color);
   background-color: rgba(255, 107, 107, 0.05);
   margin-bottom: 0;
 }
@@ -105,7 +104,7 @@
 
 /* Сообщение об ошибке */
 .errorMessage {
-  color: #ff6b6b;
+  color: var(--error-color);
   background: rgba(255, 107, 107, 0.1);
   font-size: 0.8rem;
   padding: 8px 12px;
@@ -117,9 +116,9 @@
 
 /* Кнопка подтверждения */
 .confirmButton {
-  background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
-  color: #000;
-  border: 2px solid #fff;
+  background: var(--muted-text-color);
+  color: var(--bg-color);
+  border: 2px solid var(--text-color);
   padding: 12px 28px;
   font-size: 0.95rem;
   font-weight: 700;

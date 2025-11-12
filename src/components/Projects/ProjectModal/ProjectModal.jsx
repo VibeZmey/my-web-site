@@ -5,6 +5,8 @@ import {Pagination, Navigation} from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/navigation'; // стили для кнопок
 import 'swiper/css/pagination'; // стили для точек
+import { ReactComponent as GitHub } from '../../../assets/github-icon.svg';
+import { ReactComponent as ExternalLink } from '../../../assets/external-link-icon.svg';
 
 function ProjectModal({ project, onClick, isClosing }) {
 
@@ -60,11 +62,11 @@ function ProjectModal({ project, onClick, isClosing }) {
       </main>
       <div className={styles.foot}>
         <a href={project.ghLink} target="_blank" rel="noopener noreferrer">
-          <img className={styles.footIcon} src={`${process.env.PUBLIC_URL}/github-mark-white.png`} alt="github link" />
+          <GitHub className={styles.footIcon} alt="github link"/>
         </a>
         {project.liveLink && (
           <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-            <img className={styles.footIcon} src={`${process.env.PUBLIC_URL}/external-link-icon.png`} alt="external link" />
+            <ExternalLink className={styles.footIcon} alt="external link" />
           </a>
         )}
         <button className={styles.backButton} onClick={()=>onClick()}>Назад</button>

@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState, useCallback} from 'react';
 import styles from './Background.module.css';
 
-function StarryBackground() {
+function StarryBackground({theme}) {
   const canvasRef = useRef(null);
   const starsRef = useRef([]);
   const mouseRef = useRef({x: undefined, y: undefined});
@@ -46,15 +46,15 @@ function StarryBackground() {
   // Отрисовка звезды
   const drawStar = useCallback((ctx, star) => {
     if (star.size < 1) {
-      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+      ctx.fillStyle = `rgba(${theme === 'dark-theme' ? '255, 255, 255' : '50, 50, 50'}, ${star.opacity})`;
       ctx.fillRect(star.x, star.y, star.size, star.size);
     } else {
-      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+      ctx.fillStyle = `rgba(${theme === 'dark-theme' ? '255, 255, 255' : '50, 50, 50'}, ${star.opacity})`;
       ctx.beginPath();
       ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
       ctx.fill();
     }
-  }, []);
+  }, [theme]);
 
   // Обновление позиции звезды
   const updateStar = useCallback((star) => {

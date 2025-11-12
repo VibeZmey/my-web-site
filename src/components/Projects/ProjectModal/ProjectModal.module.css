@@ -20,7 +20,7 @@
   margin-left: auto;
   font-family: Arial, sans-serif;
   font-size: 40px;
-  color: white;
+  color: var(--text-color);
   background: none;
   border: none;
   cursor: pointer;
@@ -72,7 +72,7 @@
 /* ProjectModal.module.css */
 .modal :global(.swiper-button-next),
 .modal :global(.swiper-button-prev) {
-  color: #64ffda;
+  color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,7 +107,7 @@
   align-items: center;
   padding: 0.5rem 0 0 0.5rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--highlight-bg);
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -127,7 +127,7 @@
   width: auto;
 }
 .footIcon{
-  height: 48px;;
+  height: 48px;
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -135,6 +135,9 @@
   transform: scale(1.1);
 }
 
+.footIcon svg{
+  fill: var(--text-color) !important;
+}
 .backButton{
   color: var(--muted-text-color);
   width: auto;

@@ -110,13 +110,10 @@ function Projects(){
 
   const handleModalClose = () => {
     setIsClosing(true);
-    // Ждём окончания анимации (0.4s), затем вызываем onClose
-    console.log(isClosing);
     setTimeout(() => {
       setIsClosing(false);
-      console.log(isClosing);
       setModalOpen(false);
-    }, 600); // ← должно совпадать с длительностью анимации
+    }, 600);
   }
 
   return (
