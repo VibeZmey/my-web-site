@@ -1,10 +1,10 @@
 import styles from './NavBar.module.css'
-import { ReactComponent as MenuIcon } from '../../assets/menu-icon.svg';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import {useState, useEffect} from "react";
 import {FormControlLabel} from "@mui/material";
 import Switch from '@mui/material/Switch';
 import { styled } from '@mui/material/styles';
+import Hamburger from 'hamburger-react';
 
 const MaterialUISwitch = styled(Switch)(() => ({
   width: 60,
@@ -60,7 +60,6 @@ function NavBar({isMobile, setTheme}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
-  const [showBackdrop, setShowBackdrop] = useState(false);
   const [isSwitchChecked, setIsSwitchChecked] = useState(true);
 
   const handleSwitchChange = (event) => {
@@ -95,43 +94,68 @@ function NavBar({isMobile, setTheme}) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
-
-  const handleClose = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setIsClosing(false);
-      setIsOpen(false);
-      setShowBackdrop(false);
-    }, 400);
-  };
-
   const handleLinkClick = () => {
     if (isMobile) {
-      handleClose();
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsOpen(false);
+        setIsClosing(false);
+      }, 400);
     }
   };
 
-  // Показываем backdrop когда открываем меню
-  useEffect(() => {
+  // Обработчик для бургера
+  const handleMenuToggle = () => {
     if (isOpen) {
-      setShowBackdrop(true);
+      // Если меню открыто - закрываем с анимацией
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsOpen(false);
+        setIsClosing(false);
+      }, 400);
+    } else {
+      // Если меню закрыто - открываем
+      setIsOpen(true);
+      setIsClosing(false);
     }
-  }, [isOpen]);
+  };
 
   return (
     <>
-      {showBackdrop && <div className={`${styles.menuBackdrop} ${isClosing ? styles.backdropFadeOut : styles.backdropFadeIn}`}></div>}
+      {isOpen && isMobile && (
+        <div
+          className={styles.menuBackdrop}
+          onClick={() => {
+            setIsClosing(true);
+            setTimeout(() => {
+              setIsOpen(false);
+              setIsClosing(false);
+            }, 400);
+          }}
+        />
+      )}
+
       <nav className={styles.navbar}>
         <div className={styles.iconsWrapper}>
           <a href="#about"><Logo className={styles.logo}/></a>
-          {isMobile && ( <MenuIcon className={styles.menuIcon} onClick={isOpen ? () => handleClose() : () => setIsOpen(prev => !prev)}/>)}
+          {isMobile && (
+            <Hamburger
+              toggled={isOpen && !isClosing}
+              toggle={handleMenuToggle}
+              size={40}
+              color="var(--text-color)"
+            />
+          )}
         </div>
 
         {(!isMobile || isOpen) && (
-          <div className={`${styles.nav} ${isClosing ? styles.fadeOut : styles.fadeIn}`}>
+          <div className={`${styles.nav} ${isClosing ? styles.navClose : styles.navOpen}`}>
             {sections && sections.map(section => (
-              <a href={`#${section}`} onClick={handleLinkClick}>
+              <a
+                key={section}
+                href={`#${section}`}
+                onClick={handleLinkClick}
+              >
                 <span className={`${styles.link} ${activeSection === section ? styles.active : ''}`}>
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </span>
@@ -142,6 +166,7 @@ function NavBar({isMobile, setTheme}) {
               label=""
               checked={isSwitchChecked}
               onChange={handleSwitchChange}
+              className={styles.switch}
             />
           </div>
         )}
@@ -149,4 +174,5 @@ function NavBar({isMobile, setTheme}) {
     </>
   )
 }
+
 export default NavBar;

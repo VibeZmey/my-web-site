@@ -4,15 +4,23 @@
   left: 0;
   width: 100%;
   color: var(--text-color);
-  background: var(--bg-nav);
-  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   padding: 0 5rem;
   z-index: 11;
+  background: var(--bg-nav);
+  backdrop-filter: blur(5px);
 }
 
-.container{
+.switch {
+  margin: 0 !important;
+}
+
+.MuiFormControlLabel-root {
+  margin: 0 !important;
+}
+
+.container {
   display: flex;
 }
 
@@ -23,7 +31,17 @@
   gap: 1rem;
 }
 
-.menuIcon{
+.menuIconBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuIcon {
   fill: var(--text-color);
   width: 60px;
   height: 60px;
@@ -31,15 +49,19 @@
   cursor: pointer;
 }
 
-.menuIcon:hover{
+.menuIcon:hover {
   transform: scale(1.05);
 }
 
-.menuIcon:active{
+.menuIcon:active {
   transform: scale(1.1);
 }
 
-.iconsWrapper{
+.menuIconOpen {
+  transform: scale(1.1);
+}
+
+.iconsWrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -87,7 +109,8 @@
 .link.active::after {
   width: 100%;
 }
-.link.active{
+
+.link.active {
   color: var(--accent-color);
 }
 
@@ -96,114 +119,71 @@
   outline-offset: 2px;
 }
 
-.navHelper{
-  display: flex;
-  justify-items: center;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Анимация меню */
-.fadeOut {
-  opacity: 1;
-  transform: translateY(0);
-  animation: fadeOut 0.4s ease forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-}
-
-.fadeIn {
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeIn 0.4s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Анимация фона меню */
+/* Backdrop */
 .menuBackdrop {
   position: fixed;
   top: 80px;
   left: 0;
   width: 100%;
   height: calc(100vh - 80px);
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(2px);
   z-index: 8;
-  pointer-events: none;
-  animation: backdropFadeIn 0.4s ease forwards;
-}
-
-.backdropFadeIn {
-  animation: backdropFadeIn 0.4s ease forwards;
+  animation: backdropFadeIn 0.3s ease forwards;
 }
 
 @keyframes backdropFadeIn {
   from {
     opacity: 0;
-    backdrop-filter: blur(0px);
   }
   to {
     opacity: 1;
-    backdrop-filter: blur(2px);
   }
 }
 
-.backdropFadeOut {
-  animation: backdropFadeOut 0.4s ease forwards;
-}
-
-@keyframes backdropFadeOut {
-  from {
-    opacity: 1;
-    backdrop-filter: blur(2px);
+/* Desktop styles */
+@media (min-width: 769px) {
+  .navbar {
+    padding: 0 5rem;
   }
-  to {
-    opacity: 0;
-    backdrop-filter: blur(0px);
+
+  .nav {
+    margin-left: auto;
+    flex-direction: row;
+    width: auto;
   }
 }
 
+/* Mobile styles */
 @media (max-width: 992px) {
-  .navbar{
-    padding: 0 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
   .navbar {
     height: auto;
-    padding: 0 1rem;
+    padding: 0;
     flex-direction: column;
     align-items: stretch;
+    background:none;
+    backdrop-filter: none;
   }
 
   .iconsWrapper {
     height: 80px;
     display: flex;
     align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+    background: var(--bg-nav);
+    backdrop-filter: blur(5px);
+    border-bottom: 3px solid var(--input-border);
   }
 
-  .logo{
+  .logo {
     width: 70px;
     height: 70px;
-    margin-right: auto;
   }
 
-  .menuIcon{
+  .menuIconBtn {
     margin-left: auto;
   }
 
+  /* Основные стили меню */
   .nav {
     margin-left: 0;
     gap: 0;
@@ -211,7 +191,43 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 1rem 0;
+    max-height: 500px;
+    overflow: hidden;
+    transform-origin: top;
+    background: var(--bg-nav);
+    backdrop-filter: blur(5px);
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Меню открыто - выкатывается вниз */
+  .navOpen {
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .navClose {
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    to {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+    to {
+      transform: scaleY(1);
+      opacity: 1;
+    }
   }
 
   .nav a {
@@ -219,6 +235,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
 
   .link {
@@ -242,4 +259,3 @@
     width: 100%;
   }
 }
-
