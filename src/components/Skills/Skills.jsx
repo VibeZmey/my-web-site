@@ -3,28 +3,51 @@ import Title from "../Title/Title";
 
 function Skills(){
 
-  const hard = ['React, Node.js, CSS, HTML', 'C++, QT', 'C#, WPF, APS.NET', 'GIT, Docker, JWT']
-  const soft =['Коммуникабельность', 'Критическое мышление', 'Работа в команде', 'Быстрое обучение']
+  const hard = [
+    { name: 'React, Node.js, CSS, HTML', icon: '⚡' },
+    { name: 'C++, QT', icon: '🔧' },
+    { name: 'C#, WPF, APS.NET', icon: '🎯' },
+    { name: 'GIT, Docker, JWT', icon: '📦' }
+  ]
+
+  const soft = [
+    { name: 'Коммуникабельность', icon: '💬' },
+    { name: 'Критическое мышление', icon: '🧠' },
+    { name: 'Работа в команде', icon: '👥' },
+    { name: 'Быстрое обучение', icon: '📚' }
+  ]
+
   return (
     <section id="skills" className={styles.skills}>
       <Title>My skills</Title>
 
-      <div className={styles.inner}>
-        <div className={styles.skillWrapper}>
-          <h2>Soft</h2>
-          <ul className={styles.skillsList}>
-            {soft.map((skill, i) => (<li key={i}>{skill}</li>))}
-          </ul>
+      <div className={styles.container}>
+        {/* Soft Skills */}
+        <div className={styles.skillCategory}>
+          <h2>Soft Skills</h2>
+          <div className={styles.skillsGrid}>
+            {soft.map((skill, i) => (
+              <div key={i} className={styles.skillCard}>
+                <div className={styles.skillIcon}>{skill.icon}</div>
+                <p className={styles.skillName}>{skill.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className={styles.skillWrapper}>
-          <h2>Hard</h2>
-          <ul className={styles.skillsList}>
-            {hard.map((skill, i) => (<li key={i}>{skill}</li>))}
-          </ul>
+        {/* Hard Skills */}
+        <div className={styles.skillCategory}>
+          <h2>Hard Skills</h2>
+          <div className={styles.skillsGrid}>
+            {hard.map((skill, i) => (
+              <div key={i} className={styles.skillCard}>
+                <div className={styles.skillIcon}>{skill.icon}</div>
+                <p className={styles.skillName}>{skill.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-
     </section>
   );
 }
