@@ -30,6 +30,7 @@ html{
   --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
   --media-bg: rgba(177, 177, 177);
+  --accent-color-light: rgba(25, 118, 210, 0.8);
 }
 
 /* ============ ТЁМНАЯ ТЕМА ============ */
@@ -53,6 +54,7 @@ html{
   --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.5);
   --media-bg: rgb(223, 223, 223);
+  --accent-color-light: rgba(100, 255, 218, 0.8);
 }
 
 html, body {

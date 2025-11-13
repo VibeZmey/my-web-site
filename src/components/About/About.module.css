@@ -1,6 +1,6 @@
 .about {
   color: var(--text-color);
-  padding: 5rem 4rem 1rem 4rem;
+  padding: 6rem 4rem 1rem 4rem;
   width: 100%;
   height: auto;
 }
@@ -18,7 +18,8 @@
   padding: 1rem;
   background: var(--highlight-bg);
   border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 p {
   transition: color 0.3s ease;
@@ -108,7 +109,7 @@ p {
   }
 
   .about{
-    padding: 5rem 2rem 1rem 2rem;
+    padding: 4rem 2rem 1rem 2rem;
   }
 
   .inner {

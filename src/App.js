@@ -31,7 +31,7 @@ function App() {
 
     useEffect(() => {
         const hanldeResize = () =>{
-            if(window.innerWidth < 768) setIsMobile(true);
+            if(window.innerWidth < 992) setIsMobile(true);
             else setIsMobile(false);
         }
         hanldeResize();
