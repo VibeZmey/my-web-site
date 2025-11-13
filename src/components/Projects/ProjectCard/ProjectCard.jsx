@@ -1,13 +1,13 @@
 import styles from './ProjectCard.module.css'
 import { ReactComponent as GitHub } from '../../../assets/github-icon.svg';
 import { ReactComponent as ExternalLink } from '../../../assets/external-link-icon2.svg';
-
+import { ReactComponent as Project } from '../../../assets/project-icon.svg';
 function ProjectCard({project, modalOpen}) {
   return (
     <div className={`${styles.fadeIn} ${styles.cardWrapper}`}>
       <div className={styles.card} onClick={()=>modalOpen(project)}>
         <div className={styles.head}>
-          <img className={styles.headIcon} src={`${process.env.PUBLIC_URL}/project-icon.png`} alt="project icon" />
+          <Project className={styles.headIcon} alt="project icon" />
 
           <h3>{project.name}</h3>
         </div>
