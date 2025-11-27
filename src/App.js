@@ -41,8 +41,11 @@ function App() {
 
     return (
         <div className={styles.app}>
-            <NavBar isMobile={isMobile} setTheme={setTheme} />
-            <About />
+            <a href="#main-content" className={styles.skipLink}>
+                Перейти к основному содержимому
+            </a>
+            <NavBar isMobile={isMobile} setTheme={setTheme}/>
+            <About/>
             <Skills />
             <div className={styles.container}>
                 <Marquee

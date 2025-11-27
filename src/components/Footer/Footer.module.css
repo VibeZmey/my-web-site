@@ -1,0 +1,95 @@
+.footer{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  width: 100%;
+  margin-top: 3rem;
+  color: var(--text-color);
+  background-color: var(--bg-nav);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.text p{
+  color: var(--muted-text-color);
+}
+
+.labelWrapper{
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  align-items: center;
+  font-size: 0.7rem;
+  text-wrap: nowrap;
+  padding: 1.5rem;
+}
+
+.labelWrapper span{
+  transition: all 0.3s ease;
+}
+
+.labelWrapper:hover span{
+  color: var(--accent-color);
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+.content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.iconWrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: auto;
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 40px;
+  justify-content: space-between;
+}
+
+.contacts{
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  width: auto;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 0.7rem;
+
+  padding: 1.5rem;
+}
+.contactIcon{
+  height: 1.5rem;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 992px){
+  .footer{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 1rem 0;
+    gap: 1rem;
+  }
+  .labelWrapper{
+    padding: 0;
+  }
+  .text{
+    text-align: center;
+    padding: 0;
+  }
+  .iconWrapper{
+    width: 50%;
+    padding: 0;
+  }
+  .text h2{
+    margin-bottom: 0;
+  }
+}

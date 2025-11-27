@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation'; // стили для кнопок
 import 'swiper/css/pagination'; // стили для точек
 import { ReactComponent as GitHub } from '../../../assets/github-icon.svg';
-import { ReactComponent as ExternalLink } from '../../../assets/external-link-icon.svg';
+import { ReactComponent as ExternalLink } from '../../../assets/external-link-icon2.svg';
 
 function ProjectModal({ project, onClick, isClosing }) {
 
@@ -48,7 +48,7 @@ function ProjectModal({ project, onClick, isClosing }) {
         ))}
       </Swiper>
 
-      <main>
+      <main className={styles.lists}>
         <p className={styles.description}>{project.fullDescription.description}</p>
         <p>Технологии</p>
         <ul>

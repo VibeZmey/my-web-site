@@ -3,22 +3,109 @@
   padding: 5rem 4rem 1rem 4rem;
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.showButton{
+  background: var(--accent-color-light);
+  color: var(--text-color);
+  border: 2px solid var(--input-border);
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
+.showButton:hover {
+  box-shadow: 0 3px 10px var(--accent-color-light);
+  transform: translateY(-2px);
+  border-color: #e0e0e0;
+}
+
+.filterButton {
+  background: var(--accent-color-light);
+  color: var(--text-color);
+  border: 2px solid var(--input-border);
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+.filterButton:hover {
+  box-shadow: 0 3px 10px var(--accent-color-light);
+  transform: translateY(-2px);
+  border-color: #e0e0e0;
+}
+
+.filterContainer{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-bottom: 1rem;
+}
 .inner{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
   gap: 1rem;
 }
+@media (max-width: 1800px){
+
+  .inner{grid-template-columns: 0.5fr 1fr 1fr 0.5fr;}
+
+  .inner > :nth-child(6n+3) {
+    grid-column: span 2;
+  }
+  .inner > :nth-child(6n+4) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 1285px){
+  .inner{grid-template-columns: 0.7fr 1fr 0.7fr;}
+
+  .inner > :nth-child(6n+3) {
+    grid-column: span 1;
+  }
+  .inner > :nth-child(6n+4) {
+    grid-column: span 1;
+  }
+  .inner > :nth-child(4n+1) {
+    grid-column: span 2;
+  }
+  .inner > :nth-child(4n) {
+    grid-column: span 2;
+  }
+}
+
 
 @media (max-width: 992px) {
   .inner{grid-template-columns: 1fr 1fr;}
+  .inner > :nth-child(4n+1) {
+    grid-column: span 1;
+  }
+  .inner > :nth-child(4n) {
+    grid-column: span 1;
+  }
+  .inner > :nth-child(3n+1) {
+    grid-column: span 2;
+  }
+
   .projects{padding: 5rem 2rem 1rem 2rem;}
 }
 
 @media (max-width: 768px) {
   .projects{padding: 6rem 1rem 1rem 1rem;}
+  .inner > :nth-child(3n+1) {
+    grid-column: span 1;
+  }
   .inner{grid-template-columns: 1fr;}
 }

@@ -137,14 +137,17 @@ function NavBar({isMobile, setTheme}) {
 
       <nav className={styles.navbar}>
         <div className={styles.iconsWrapper}>
-          <a href="#about"><Logo className={styles.logo}/></a>
+          <a href="#about" aria-label="to start"><Logo className={styles.logo}/></a>
           {isMobile && (
-            <Hamburger
-              toggled={isOpen && !isClosing}
-              toggle={handleMenuToggle}
-              size={40}
-              color="var(--text-color)"
-            />
+            <div className={styles.hamWrapper}>
+              <Hamburger
+                toggled={isOpen && !isClosing}
+                toggle={handleMenuToggle}
+                size={40}
+                color="var(--text-color)"
+                label={"open menu"}
+              />
+            </div>
           )}
         </div>
 
@@ -162,7 +165,7 @@ function NavBar({isMobile, setTheme}) {
               </a>
             ))}
             <FormControlLabel
-              control={<MaterialUISwitch sx={{ m: 2 }} defaultChecked />}
+              control={<MaterialUISwitch sx={{ m: 2 }} />}
               label=""
               checked={isSwitchChecked}
               onChange={handleSwitchChange}

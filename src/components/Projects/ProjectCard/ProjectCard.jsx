@@ -9,13 +9,13 @@ function ProjectCard({project, modalOpen}) {
         <div className={styles.head}>
           <Project className={styles.headIcon} alt="project icon" />
 
-          <h3>{project.name}</h3>
+          <h2>{project.name}</h2>
         </div>
 
         <p>{project.smallDescription}</p>
 
         <div className={styles.foot}>
-          <h4>{project.langs}</h4>
+          <span>{project.langs}</span>
 
           <div className={styles.imageWrapper}>
             <a href={project.ghLink} target="_blank" rel="noopener noreferrer">

@@ -6,6 +6,10 @@
   transition: color 0.3s ease;
 }
 
+h1{
+  font-weight: 100;
+}
+
 .foot{
   margin-top: auto;
   display: flex;
@@ -72,9 +76,8 @@ svg{
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  border: 2px solid transparent;
 }
-
-
 
 .card:active{
   transform: scale(1.1);
@@ -82,10 +85,14 @@ svg{
 .card:hover{
   background: rgba(106, 106, 106, 0.2);
   transform: scale(1.05);
+  border-color: var(--accent-color);
   .headIcon{stroke: var(--accent-color);}
   .head{color: var(--accent-color);}
 }
 
+.card:focus{
+  border-color: var(--accent-color);
+}
 
 @keyframes fadeOut {
   to {

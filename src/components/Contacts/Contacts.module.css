@@ -25,6 +25,7 @@
   margin-bottom: 1rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
+  border: 2px solid transparent;
 }
 
 .socialMedia:hover {
@@ -32,6 +33,7 @@
   backdrop-filter: blur(2px);
   transform: scale(1.02);
   color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .contactIcon{
