@@ -64,7 +64,6 @@ function StarryBackground({theme}) {
       star.twinkleDirection *= -1;
     }
 
-    // Отталкивание только на десктопе
     if (!isMobile && mouseRef.current.x !== undefined) {
       const dx = mouseRef.current.x - star.x;
       const dy = mouseRef.current.y - star.y;
@@ -191,7 +190,6 @@ function StarryBackground({theme}) {
     };
   }, [isMobile]);
 
-  // Обработка видимости вкладки
   useEffect(() => {
     const handleVisibilityChange = () => {
       isActiveRef.current = !document.hidden;
