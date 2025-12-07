@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-web-site/static/css/main.0998261e.css",
-    "main.js": "/my-web-site/static/js/main.0a99be73.js",
+    "main.css": "/my-web-site/static/css/main.fb9f396c.css",
+    "main.js": "/my-web-site/static/js/main.d5b5ebaa.js",
     "static/media/logo.svg": "/my-web-site/static/media/logo.978d194ce926dccf6274f8d838e6242b.svg",
     "static/media/github-icon.svg": "/my-web-site/static/media/github-icon.39ace72497910a74e417a5f41c1e1161.svg",
     "static/media/telegram-icon.svg": "/my-web-site/static/media/telegram-icon.180a11583be5eb8bfad2ce592d964acc.svg",
@@ -9,11 +9,11 @@
     "static/media/vk-icon.svg": "/my-web-site/static/media/vk-icon.e6a5781e003f55e5f83969e3aa7fe125.svg",
     "static/media/external-link-icon2.svg": "/my-web-site/static/media/external-link-icon2.42fa2606e6dd2173f0fcf93d34b58bd3.svg",
     "static/media/project-icon.svg": "/my-web-site/static/media/project-icon.9dae3f8e299644d5b745463a726b1f07.svg",
-    "main.0998261e.css.map": "/my-web-site/static/css/main.0998261e.css.map",
-    "main.0a99be73.js.map": "/my-web-site/static/js/main.0a99be73.js.map"
+    "main.fb9f396c.css.map": "/my-web-site/static/css/main.fb9f396c.css.map",
+    "main.d5b5ebaa.js.map": "/my-web-site/static/js/main.d5b5ebaa.js.map"
   },
   "entrypoints": [
-    "static/css/main.0998261e.css",
-    "static/js/main.0a99be73.js"
+    "static/css/main.fb9f396c.css",
+    "static/js/main.d5b5ebaa.js"
   ]
 }
