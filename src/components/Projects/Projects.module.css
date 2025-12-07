@@ -57,7 +57,7 @@
   justify-items: center;
   gap: 1rem;
 }
-@media (max-width: 1800px){
+@media (max-width: 2000px){
 
   .inner{grid-template-columns: 0.5fr 1fr 1fr 0.5fr;}
 
